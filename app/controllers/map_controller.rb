@@ -9,7 +9,6 @@ class MapController < ApplicationController
 	  # Get the API key for OpenWeatherAPI.
 	  openweatherkey = File.read("#{Rails.root}/app/assets/openweatherapi.key")
 
-
 	  # Get the cities to check polution and weather data for.
 	  cities = File.read("#{Rails.root}/app/assets/cities")
 	  cities = cities.split("\n")
