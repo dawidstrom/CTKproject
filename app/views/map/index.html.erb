@@ -1,2 +1,18 @@
-<h1>Map#index</h1>
-<p>Find me in app/views/map/index.html.erb</p>
+<h1>Weather and Polution Map</h1>
+
+<!-- Table of weather and polution in cities.-->
+<table style="border: solid 1px black;">
+	<tr>
+		<th>City</th>
+		<th>Weather</th>
+		<th>Polution</th>
+	</tr>
+
+	<!-- Loop over the city entries and display name and weather.-->
+	<% @weather.each do |city| %>
+		<tr>
+			<th><b><%= city[0] %></b></th>
+			<th><b><%= city[1] %></b></th>
+		</tr>
+	<% end %>
+</table>
