@@ -1,18 +1,34 @@
-<h1>Weather and Polution Map</h1>
+<center>
+	<h1>Weather Map</h1>
+	<!--<input type="textfield" style="width: 300px" placeholder="<City>,<Country Abbreviation>" />
+	<input type="Button" value="Submit" onClick="
+		var uluru = { lat: 10, lng: 10};
+		var map = new google.maps.Map(document.getElementById('map'), { zoom: 7, center: uluru }); 
+		var marker = new google.maps.Marker({ position: uluru, map: map }); 
+		"/>-->
 
-<!-- Table of weather and polution in cities.-->
-<table style="border: solid 1px black;">
-	<tr>
-		<th>City</th>
-		<th>Weather</th>
-		<th>Polution</th>
-	</tr>
+	<!-- The google maps map -->
+	<script async defer src="<%= @map %>"></script>
+	<div id="map"></div>
 
-	<!-- Loop over the city entries and display name and weather.-->
-	<% @weather.each do |city| %>
+	<!-- Table of weather and polution in cities.-->
+	<table style="border: solid 1px black;">
 		<tr>
-			<th><b><%= city[0] %></b></th>
-			<th><b><%= city[1] %></b></th>
+			<th>City</th>
+			<th>Weather</th>
+			<th>Temperature (C)</th>
+			<th>Wind speed</th>
 		</tr>
-	<% end %>
-</table>
+
+		<!-- Loop over the city entries and display name and weather.-->
+		<% @weather.each do |city| %>
+			<tr>
+				<!-- print city name, weather, temperature, and wind speed.-->
+				<th><b><%= city[0] %></b></th>
+				<th><b><%= city[1][0] %></b></th>
+				<th><b><%= city[1][1] %></b></th>
+				<th><b><%= city[1][2] %></b></th>
+			</tr>
+		<% end %>
+	</table>
+</center>
