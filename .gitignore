@@ -25,4 +25,4 @@
 # API key.
 api.key
 # Forecast used for testing, no need to call API during testing.
-forecast.json
+assets/*.json
