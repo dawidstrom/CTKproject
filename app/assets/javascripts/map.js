@@ -5,12 +5,31 @@
 */
 
 // Starting location, Gothenburg,se.
-var x = 57.71;
-var y = 11.98;
+var start_x = 57.71;
+var start_y = 11.98;
 
-// Function for initializing a google map using the Google Maps Javascript API.
-function initMap() { 
+// Sets the element with id "map" to be a Google Maps map, with position x and
+// y.
+function initMap(x, y) { 
 	var uluru = { lat: x, lng: y};
 	var map = new google.maps.Map(document.getElementById('map'), { zoom: 7, center: uluru }); 
 	var marker = new google.maps.Marker({ position: uluru, map: map }); 
+}
+
+// 
+function updateMapOnEnter(key) {
+	if (key == 13) {
+		document.getElementById('city_query_submit').click();
+	}
+}
+
+// Update map with input.
+function updateMapWithInput() {
+	input = document.getElementById('city_query').value.split(',');
+	initMap(parseFloat(input[1]), parseFloat(input[0]));
+}
+
+// Initializes 
+function startMap() {
+	initMap(start_x, start_y);
 }

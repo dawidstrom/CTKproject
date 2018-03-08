@@ -1,11 +1,11 @@
 <center>
 	<h1>Weather Map</h1>
-	<!--<input type="textfield" style="width: 300px" placeholder="<City>,<Country Abbreviation>" />
-	<input type="Button" value="Submit" onClick="
-		var uluru = { lat: 10, lng: 10};
-		var map = new google.maps.Map(document.getElementById('map'), { zoom: 7, center: uluru }); 
-		var marker = new google.maps.Marker({ position: uluru, map: map }); 
-		"/>-->
+
+	<!-- City weather query.-->
+	<input id="city_query" type="textfield" style="width: 300px" 
+										 placeholder="<City>,<Country Abbreviation>" 
+										 onkeydown="updateMapOnEnter(event.keyCode)" />
+	<input id="city_query_submit" type="Button" value="Submit" onClick="updateMapWithInput()"/>
 
 	<!-- The google maps map -->
 	<script async defer src="<%= @map %>"></script>

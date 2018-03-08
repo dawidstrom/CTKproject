@@ -4,7 +4,7 @@ class MapController < ApplicationController
   def index
 	  # Get the API key for Google Maps Javascript API.
 	  gmapkey = File.read("#{Rails.root}/app/assets/gmapsapi.key")
-	  @map = "https://maps.googleapis.com/maps/api/js?key=#{gmapkey}&callback=initMap"
+	  @map = "https://maps.googleapis.com/maps/api/js?key=#{gmapkey}&callback=startMap"
 
 	  # Get the API key for OpenWeatherAPI.
 	  openweatherkey = File.read("#{Rails.root}/app/assets/openweatherapi.key")
