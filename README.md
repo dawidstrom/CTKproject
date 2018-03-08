@@ -4,8 +4,11 @@ This is a website hosting a weather and polution map for various cities in the
 world, made on behalf of CTK.
 
 The code have been developed on an Arch Linux system running:
+
 Ruby version: 2.5
+
 Rails version: 5.1.5
+
 
 To run the project:
 1. Clone this repository.
