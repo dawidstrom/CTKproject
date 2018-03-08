@@ -12,7 +12,7 @@ Rails version: 5.1.5
 
 To run the project:
 1. Clone this repository.
-2. Get an API key from "openweathermap.org" and put it in the file app/assets/api.key.
+2. Get an API key from "openweathermap.org" and put it in the file app/assets/openweatherapi.key.
 3. Specify which cities you would like to have data for by putting "\<City
    name\>,\<Country abbreviation\>" in the file named app/assets/cities. 
    Separate each city with a newline.

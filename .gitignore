@@ -22,8 +22,10 @@
 
 .byebug_history
 
-# API key.
-api.key
+# API keys.
+gmapsapi.key
+openweatherapi.key
+
 # Forecast used for testing, no need to call API during testing.
 app/assets/*.json
 app/assets/cities
