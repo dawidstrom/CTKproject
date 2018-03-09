@@ -1,11 +1,20 @@
+<!-- Import JQuery.-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <center>
 	<h1>Weather Map</h1>
 
+	<!-- City weather query input.-->
+	<%= form_tag("/map/getWeather", method: 'get', :remote => true) do %>
+		<%= text_field_tag(:city_query) %>
+		<%= submit_tag("Submit") %>
+	<% end %>
+
 	<!-- City weather query.-->
-	<input id="city_query" type="textfield" style="width: 300px" 
+	<!--<input id="city_query" type="textfield" style="width: 300px" 
 										 placeholder="<City>,<Country Abbreviation>" 
 										 onkeydown="updateMapOnEnter(event.keyCode)" />
-	<input id="city_query_submit" type="Button" value="Submit" onClick="updateMapWithInput()"/>
+	<input id="city_query_submit" type="Button" value="Submit" onClick="updateMapWithInput()"/>-->
 
 	<!-- The google maps map -->
 	<script async defer src="<%= @map %>"></script>
@@ -20,14 +29,14 @@
 			<th>Wind speed</th>
 		</tr>
 
-		<!-- Loop over the city entries and display name and weather.-->
-		<% @weather.each do |city| %>
+		<!-- Loop over the city entries and display weather information.-->
+		<% @weather.each do |w| %>
 			<tr>
 				<!-- print city name, weather, temperature, and wind speed.-->
-				<th><b><%= city[0] %></b></th>
-				<th><b><%= city[1][0] %></b></th>
-				<th><b><%= city[1][1] %></b></th>
-				<th><b><%= city[1][2] %></b></th>
+				<th onclick="setMapByCoordinates(<%= w[1][3] %>,<%= w[1][4] %>)"><%= w[0] %></th>
+				<th><%= w[1][0] %></th>
+				<th><%= w[1][1] %></th>
+				<th><%= w[1][2] %></th>
 			</tr>
 		<% end %>
 	</table>
