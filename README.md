@@ -1,7 +1,7 @@
 # README
 
-This is a website hosting a weather and polution map for various cities in the
-world, made on behalf of CTK.
+This is a website hosting a weather map and weather information for various 
+cities in the world, made on behalf of CTK.
 
 The code have been developed on an Arch Linux system running:
 
